@@ -42,6 +42,8 @@
   * Fix gem quote consistency on docs (#9517)
   * Make site search work again (#9530)
   * Jekyll docs template typo - All pages show &#34;Deployment&#34; (#9548)
+  * Fixed: Wrong navigation style on the right side of news and docs pages (#9586)
+  * Add redirect for step-by-step tutorial (#9593)
 
 ### Development Fixes
 
@@ -69,6 +71,7 @@
   * Fix Performance/StringIdentifierArgument violation in site.rb and allow activesupport 6 for windows tests (#9512)
   * Add csv to runtime dependency list (#9522)
   * Add a few more emeritus team members (#9535)
+  * Make custom cop inherit `RuboCop::Cop::Base` (#9597)
 
 ### Bug Fixes
 
@@ -81,6 +84,8 @@
   * Add support for upcoming logger 1.4.3 (#9392)
   * Fix typo in devcontainer.json (#9364)
   * Bump the minimum ruby version to 2.7 (#9525)
+  * Correct rubocop lint errors (#9600)
+  * Fix inexistent layout warning for the default 404 page (#9589)
 
 ## 4.3.3 / 2023-12-27
 
