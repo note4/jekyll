@@ -1,9 +1,76 @@
-## HEAD
+## 4.4.1 / 2025-01-29
+
+### Bug Fixes
+
+  * Restore globbed path behavior in front matter defaults (#9762)
+
+## 4.4.0 / 2025-01-27
 
 ### Minor Enhancements
 
   * Allow marking specific highlighted lines via Liquid (#9138)
-  * 3.9-stable: allow Pages to be Excerpted (#9550)
+  * Add gem `csv` to runtime dependency list (#9522)
+  * Bump the minimum ruby version to 2.7 (#9525)
+  * Acknowledge `livereload_port` from site config too (#9606)
+  * Add gem `base64` as runtime dependency (#9740)
+  * Add gem `json` as runtime_dependency (#9671)
+  * Remove unnecessary constraint on gem `mercenary` (#9758)
+
+### Bug Fixes
+
+  * Optimize default front matter using `File.fnmatch?` (#9185)
+  * Remove totals in profile table properly (#9186)
+  * Optimize `Site#each_site_file` (#9187)
+  * Rename sass partial created for new blank site (#9257)
+  * Fix `jekyll serve --detach` with jekyll-sass-converter 3.x (#9304)
+  * Handle TypeError from `where` filter gracefully (#9292)
+  * Add support for upcoming logger 1.4.3 (#9392)
+  * Fix typo in devcontainer.json (#9364)
+  * Correct rubocop lint errors (#9600)
+  * Fix inexistent layout warning for the default 404 page (#9589)
+  * Relax version constraint on `wdm` in new Gemfile (#9662)
+  * Fix `--livereload-ignore` option (#9570)
+  * Render theme-gem root only in development (#9680)
+
+### Development Fixes
+
+  * Cleanup highlight tag (#9177)
+  * Run tests in utc (#9168)
+  * Lock Ruby in CI to v3.1.2 and bump JRuby to v9.4.0.0 (#9196)
+  * Update sass related tests for jekyll-sass-converter 3.x (#9223)
+  * Split `test/test_tags.rb` into multiple files (#9230)
+  * test: use hash explicitly for Struct initializer for ruby 3.2 (#9237)
+  * script/default-site: accept flags for `jekyll new` (#9259)
+  * Bump check-spelling/check-spelling from 0.0.20 to 0.0.21 (#9205)
+  * Use check-spelling/check-spelling@v0.0.21 (#9199)
+  * Bump RuboCop to v1.45.x (#9305)
+  * Bump Rubocop to version 1.48.x (#9326)
+  * Bump versions of ruby &amp; nodejs in devcontainer (#9360)
+  * Bump rubocop version to 1.52.x (#9361)
+  * Upgrade RuboCop to 1.54 (#9401)
+  * Add CodeQL workflow (#9397)
+  * Bump actions/checkout from 3 to 4 (#9442)
+  * Test suite uses shoulda-context only. (#9441)
+  * Keep activesupport at version 7.0.x (#9469)
+  * Bump Rubocop to 1.56.4 (#9459)
+  * Configure dependabot to handle rubygems dependencies (#9445)
+  * Update rubocop gem (#9476)
+  * Fix Performance/StringIdentifierArgument violation in site.rb and allow activesupport 6 for windows tests (#9512)
+  * Add a few more emeritus team members (#9535)
+  * Make custom cop inherit `RuboCop::Cop::Base` (#9597)
+  * CI: Use JRuby 9.4.8.0 (#9654)
+  * Stop testing with Cucumber on JRuby (#9661)
+  * Windows CI on GitHub Actions (#9659)
+  * Run GitHub Actions only if needed (#9664)
+  * Format `.rubocop.yml` via a rake task (#9687)
+  * Configure some new cops (#9688)
+  * Fix expected markup per WAI-ARIA requirements (#9737)
+  * Add an optional `:rdoc` group of gems (#9742)
+  * Test `inspect` filter with custom object (#9743)
+  * Bump cucumber to v9 (#9747)
+  * Add Ruby 3.4 to CI matrix (#9740)
+  * Remove unnecessary runtime dependency (#9753)
+  * Bump `check-spelling/check-spelling` action (#9756)
 
 ### Documentation
 
@@ -44,48 +111,41 @@
   * Jekyll docs template typo - All pages show &#34;Deployment&#34; (#9548)
   * Fixed: Wrong navigation style on the right side of news and docs pages (#9586)
   * Add redirect for step-by-step tutorial (#9593)
+  * Add Jekyll 3.10.0 release post &amp; history (#9625)
+  * Fix minor docs error (#9641)
+  * Update windows.md (#9644)
+  * Document keys of global variable `{{ jekyll }}` (#9653)
+  * Fix incorrect and inconsistent variables in the permalinks page (#9591)
+  * Fix lapses in documentation of page variables (#9667)
+  * Add note about VSCode warning for SCSS files (#9609)
+  * docs: Fix incorrect parentheses (#9629)
+  * docs: Fix of a bug in the pagination section (#8890)
+  * Update current Ruby version renders and macOS docs (#9614)
+  * Improve docs around using GitHub Actions to build and deploy Jekyll sites (#9682)
+  * Fix grammar in the description of `page.excerpt` variable (#9689)
+  * Render HTML tables at `/docs/permalinks/` using a data file (#9666)
+  * Fix HTML attribute separation whitespace placement in the Navigation include code of Assets step of the Step by Step Tutorial (#9695)
+  * Fix missing glob matching pattern support description in the documentation of the `include` and `exclude` configuration options (#9697)
+  * Fix missing `url` configuration option documentation (#9699)
+  * Link to GitHub Pages Dependency versions page instead of explicitly specifying Jekyll version (#9715)
+  * Fix broken link on third-party.md (#9704)
+  * Fix: remove inaccessible links and their descriptions (#9745)
+  * Add release post for v4.4.0 (#9759)
 
-### Development Fixes
+### Site Enhancements
 
-  * Cleanup highlight tag (#9177)
-  * Run tests in utc (#9168)
-  * Lock Ruby in CI to v3.1.2 and bump JRuby to v9.4.0.0 (#9196)
-  * Update sass related tests for jekyll-sass-converter 3.x (#9223)
-  * Split `test/test_tags.rb` into multiple files (#9230)
-  * test: use hash explicitly for Struct initializer for ruby 3.2 (#9237)
-  * script/default-site: accept flags for `jekyll new` (#9259)
-  * Bump check-spelling/check-spelling from 0.0.20 to 0.0.21 (#9205)
-  * Use check-spelling/check-spelling@v0.0.21 (#9199)
-  * Bump RuboCop to v1.45.x (#9305)
-  * Bump Rubocop to version 1.48.x (#9326)
-  * Bump versions of ruby &amp; nodejs in devcontainer (#9360)
-  * Bump rubocop version to 1.52.x (#9361)
-  * Upgrade RuboCop to 1.54 (#9401)
-  * Add CodeQL workflow (#9397)
-  * Bump actions/checkout from 3 to 4 (#9442)
-  * Test suite uses shoulda-context only. (#9441)
-  * Keep activesupport at version 7.0.x (#9469)
-  * Bump Rubocop to 1.56.4 (#9459)
-  * Configure dependabot to handle rubygems dependencies (#9445)
-  * Update rubocop gem (#9476)
-  * Fix Performance/StringIdentifierArgument violation in site.rb and allow activesupport 6 for windows tests (#9512)
-  * Add csv to runtime dependency list (#9522)
-  * Add a few more emeritus team members (#9535)
-  * Make custom cop inherit `RuboCop::Cop::Base` (#9597)
+  * Extract markup for `Improve this page` into an inclusion (#9675)
+
+## 4.3.4 / 2024-09-16
 
 ### Bug Fixes
 
-  * Optimize default front matter using `File.fnmatch?` (#9185)
-  * Remove totals in profile table properly (#9186)
-  * Optimize `Site#each_site_file` (#9187)
-  * Rename sass partial created for new blank site (#9257)
-  * Fix `jekyll serve --detach` with jekyll-sass-converter 3.x (#9304)
-  * Handle TypeError from `where` filter gracefully (#9292)
-  * Add support for upcoming logger 1.4.3 (#9392)
-  * Fix typo in devcontainer.json (#9364)
-  * Bump the minimum ruby version to 2.7 (#9525)
-  * Correct rubocop lint errors (#9600)
-  * Fix inexistent layout warning for the default 404 page (#9589)
+  * Backport #9662 for v4.3.x: Relax version constraint on wdm in new Gemfile (#9683)
+  * Backport #9680 for v4.3.x: Render theme-gem root only in development (#9684)
+
+### Development Fixes
+
+  * Sync workflows with counterparts on `master` (#9681)
 
 ## 4.3.3 / 2023-12-27
 
@@ -96,6 +156,19 @@
 ### Development Fixes
 
   * Backport #9237 for v4.3.x: Use Hash explicitly for Struct initializer (#9285)
+
+## 3.10.0 / 2024-06-23
+
+### Minor Enhancements
+
+  * Backport add-csv-dependency from #9522 to Jekyll 3 (#9616)
+  * 3.10-stable: Add webrick as a dependency (#9620)
+
+## 3.9.5 / 2024-02-12
+
+### Minor Enhancements
+
+  * 3.9-stable: allow Pages to be Excerpted (#9550)
 
 ## 3.9.4 / 2023-12-28
 
